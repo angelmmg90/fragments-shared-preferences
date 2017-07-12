@@ -36,9 +36,8 @@ public class LoginActivity extends AppCompatActivity {
                 //Almacenamos los valores de login del usuario para posteriormente entrar directamente en la aplicación y no solicitar
                 //nuevamente los datos de acceso
                 saveSharedPreferences(valorUsuario, valorPass);
+                nextScreen();
 
-                /*Intent navegarEntrePantallas = new Intent(getBaseContext(), "??");
-                startActivity(navegarEntrePantallas);*/
                 /*Find*/
 
             }
@@ -46,9 +45,18 @@ public class LoginActivity extends AppCompatActivity {
         /*Fin*/
     }
 
+    private void nextScreen(){
+        /*Intent navegarEntrePantallas = new Intent(getBaseContext(), "??");
+          startActivity(navegarEntrePantallas);*/
+    }
+
     private void checkUsuarioYPass(){
         SharedPreferences guardarEnXml = getSharedPreferences("DATOS_MUSICA", Context.MODE_PRIVATE);
-
+        String usuario = guardarEnXml.getString("USUARIO", null); //Buscamos en el archivo de sharedPreferences si encuentra una clave con USUARIO, en caso negativo devolvemos null
+        if(usuario!=null){//Si el usuario es != null significa que ya ha hecho login
+            /*intent*/
+            nextScreen();
+        }
     }
     private void saveSharedPreferences(String usuario, String pass){
         SharedPreferences guardarEnXml = getSharedPreferences("DATOS_MUSICA", Context.MODE_PRIVATE);
