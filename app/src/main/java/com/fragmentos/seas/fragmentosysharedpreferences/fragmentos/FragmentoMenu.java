@@ -14,7 +14,7 @@ import com.fragmentos.seas.fragmentosysharedpreferences.R;
 
 
 public class FragmentoMenu extends Fragment {
-
+    private ArrayList<Artista> listaMusic
 
     public FragmentoMenu() {
         // Required empty public constructor
