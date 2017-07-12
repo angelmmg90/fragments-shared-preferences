@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.fragmentos.seas.fragmentosysharedpreferences.R;
 
@@ -49,6 +50,10 @@ public class FragmentoMenu extends Fragment {
 
 
 
+    private ImageView imgAbstract1;
+    private ImageView imgAbstract2;
+    private ImageView imgAbstract3;
+    private ImageView imgAbstract4;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -57,7 +62,10 @@ public class FragmentoMenu extends Fragment {
         View vista =  inflater.inflate(R.layout.fragment_fragmento_menu, container, false);
 
         if(vista!=null){
-
+            imgAbstract1 = (ImageView) vista.findViewById(R.id.imgAbstract1);
+            imgAbstract2 = (ImageView) vista.findViewById(R.id.imgAbstract2);
+            imgAbstract3 = (ImageView) vista.findViewById(R.id.imgAbstract3);
+            imgAbstract4 = (ImageView) vista.findViewById(R.id.imgAbstract4);
         }
     }
 

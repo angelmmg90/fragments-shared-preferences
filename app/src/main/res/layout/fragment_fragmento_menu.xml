@@ -2,15 +2,43 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal"
+
+    android:weightSum="100"
     tools:context="com.fragmentos.seas.fragmentosysharedpreferences.fragmentos.FragmentoMenu">
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:id="@+id/imgAbstract1"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="25"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/abstract_1" />
+
+    <ImageView
+        android:id="@+id/imgAbstract2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="25"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/abstract_2" />
+
+    <ImageView
+        android:id="@+id/imgAbstract3"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="25"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/abstract_3" />
+
+    <ImageView
+        android:id="@+id/imgAbstract4"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="25"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/abstract_4" />
+
 </LinearLayout>
