@@ -35,7 +35,7 @@ public class FragmentoMenu extends Fragment {
     @Override
     public void onAttach(Context context){
         super.onAttach(context);
-        /*Vincular una interface que me notifique acciones desde el Activity y el Fragmento*/
+        /*Vincular una interfaces que me notifique acciones desde el Activity y el Fragmento*/
 
 
     }
@@ -67,6 +67,42 @@ public class FragmentoMenu extends Fragment {
             imgAbstract3 = (ImageView) vista.findViewById(R.id.imgAbstract3);
             imgAbstract4 = (ImageView) vista.findViewById(R.id.imgAbstract4);
         }
+
+        return vista;
+    }
+
+
+    @Override
+    public void onActivityCreated(Bundle datos){
+        super.onActivityCreated(datos);
+
+        imgAbstract1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        imgAbstract2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        imgAbstract3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        imgAbstract4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+
     }
 
 }
