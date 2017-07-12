@@ -21,15 +21,39 @@ tools:context="com.fragmentos.seas.fragmentosysharedpreferences.LoginActivity">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="right"
-        android:text="TextView" />
+        android:text="TextView"
+        tools:text="User" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:text="TextView"
+        tools:text="Pass" />
+
+    <EditText
+        android:id="@+id/edtPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:text="Enviar" />
 
 
 </LinearLayout>
