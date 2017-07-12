@@ -40,10 +40,25 @@ public class FragmentoMenu extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle datos){
+        super.onCreate(datos);
+        if(getArguments()!=null){
+            // Recuperamos los datos de la clase Bundle ("CLAVE","VALOR"), la cual setteamos en newInstance
+        }
+    }
+
+
+
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fragmento_menu, container, false);
+        View vista =  inflater.inflate(R.layout.fragment_fragmento_menu, container, false);
+
+        if(vista!=null){
+
+        }
     }
 
 }
