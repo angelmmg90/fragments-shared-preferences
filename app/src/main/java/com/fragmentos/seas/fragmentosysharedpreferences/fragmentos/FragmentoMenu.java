@@ -1,6 +1,8 @@
 package com.fragmentos.seas.fragmentosysharedpreferences.fragmentos;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,12 +20,24 @@ public class FragmentoMenu extends Fragment {
     }
     /*Bloque de instancia*/
     //Cualquier que requiera de un fragmento en vez de hacer un new llamará a este método estático que devolverá un fragmento
-    public static FragmentoMenu newInstance(Bundle datos){
+    public static FragmentoMenu newInstance(Bundle datos){//Bundle para poder transferir datos entre diferentes activities, parecido a HashMaps
+        FragmentoMenu fragmentoMenu = new FragmentoMenu();
+
+        if(datos!=null){
+            fragmentoMenu.setArguments(datos);
+        }
+        return fragmentoMenu;
 
     }
-
     /**/
 
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        /*Vincular una interface que me notifique acciones desde el Activity y el Fragmento*/
+
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
