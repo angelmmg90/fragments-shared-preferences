@@ -30,7 +30,12 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 /*Antes de pasar a la siguiente pantalla, guardo los datos en SharedPreferences*/
-                saveSharedPreferences();
+                String valorUsuario = edtUser.getText().toString();
+                String valorPass = edtPass.getText().toString();
+
+                //Almacenamos los valores de login del usuario para posteriormente entrar directamente en la aplicación y no solicitar
+                //nuevamente los datos de acceso
+                saveSharedPreferences(valorUsuario, valorPass);
 
                 /*Intent navegarEntrePantallas = new Intent(getBaseContext(), "??");
                 startActivity(navegarEntrePantallas);*/
@@ -41,7 +46,15 @@ public class LoginActivity extends AppCompatActivity {
         /*Fin*/
     }
 
-    private void saveSharedPreferences(){
+    private void checkUsuarioYPass(){
         SharedPreferences guardarEnXml = getSharedPreferences("DATOS_MUSICA", Context.MODE_PRIVATE);
+
+    }
+    private void saveSharedPreferences(String usuario, String pass){
+        SharedPreferences guardarEnXml = getSharedPreferences("DATOS_MUSICA", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = guardarEnXml.edit(); //Nos permite realizar la edición sobre el sharedPreferences creado anteriormente
+            editor.putString("USUARIO",usuario); //Almacenamos el usuario
+            editor.putString("PASSWORD",pass); //Almacenamos la pass
+        editor.commit();
     }
 }
