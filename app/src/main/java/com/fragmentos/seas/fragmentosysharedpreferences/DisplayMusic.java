@@ -10,5 +10,7 @@ public class DisplayMusic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_music);
 
+
+
     }
 }

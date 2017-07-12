@@ -5,14 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.fragmentos.seas.fragmentosysharedpreferences.DisplayMusic">
+    tools:context="com.fragmentos.seas.fragmentosysharedpreferences.DisplayMusic"
+    android:weightSum="100">
 
     <FrameLayout
+        android:id="@+id/fragmentoMenuImagenes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="25"
+        android:background="@android:color/holo_red_dark">
 
-        >
+    </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/fragmentoImagenYBiografia"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="75"
+        android:background="@android:color/holo_blue_dark">
 
     </FrameLayout>
 
