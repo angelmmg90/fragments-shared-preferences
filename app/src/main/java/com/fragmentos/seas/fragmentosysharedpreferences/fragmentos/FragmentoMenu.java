@@ -11,10 +11,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.fragmentos.seas.fragmentosysharedpreferences.R;
+import com.fragmentos.seas.fragmentosysharedpreferences.beans.Artista;
+import com.fragmentos.seas.fragmentosysharedpreferences.interfaces.ArtistaListener;
+
+import java.util.ArrayList;
 
 
 public class FragmentoMenu extends Fragment {
-    private ArrayList<Artista> listaMusic
+    private ArrayList<Artista> listaMusic = new ArrayList<Artista>();
+    private ArtistaListener listener;
 
     public FragmentoMenu() {
         // Required empty public constructor
@@ -36,7 +41,7 @@ public class FragmentoMenu extends Fragment {
     public void onAttach(Context context){
         super.onAttach(context);
         /*Vincular una interfaces que me notifique acciones desde el Activity y el Fragmento*/
-
+        listener = (ArtistaListener) context;
 
     }
 
@@ -76,10 +81,14 @@ public class FragmentoMenu extends Fragment {
     public void onActivityCreated(Bundle datos){
         super.onActivityCreated(datos);
 
+        listaMusic.add(new Artista("Abstract 1", "Carátula Album Abstracto 1"));
+        listaMusic.add(new Artista("Abstract 2", "Carátula Album Abstracto 2"));
+        listaMusic.add(new Artista("Abstract 3", "Carátula Album Abstracto 3"));
+        listaMusic.add(new Artista("Abstract 4", "Carátula Album Abstracto 4"));
         imgAbstract1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                listener.onArtistaSelected(listaMusic.get(0));
             }
         });
         imgAbstract2.setOnClickListener(new View.OnClickListener() {
