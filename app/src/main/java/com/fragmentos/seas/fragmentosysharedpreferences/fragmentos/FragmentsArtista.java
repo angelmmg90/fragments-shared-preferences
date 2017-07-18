@@ -1,13 +1,18 @@
 package com.fragmentos.seas.fragmentosysharedpreferences.fragmentos;
 
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.fragmentos.seas.fragmentosysharedpreferences.R;
+import com.fragmentos.seas.fragmentosysharedpreferences.beans.Artista;
 
 public class FragmentsArtista extends Fragment {
 
@@ -30,14 +35,36 @@ public class FragmentsArtista extends Fragment {
     }
     /**/
 
+    private ImageView imagen;
+    private TextView nombreArtista;
+    private TextView descArtista;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View vista =  inflater.inflate(R.layout.fragments_artista, container, false);
         if(vista!=null){
+            imagen = (ImageView) vista.findViewById(R.id.imgArtista);
+            nombreArtista = (TextView) vista.findViewById(R.id.txtNombreArtista);
+            descArtista = (TextView) vista.findViewById(R.id.txtDescripcionArtista);
 
         }
+        return vista;
     }
+
+    public void modificarDatosArtista(Artista artista){
+        nombreArtista.setText(artista.getNombre());
+        descArtista.setText(artista.getDescripcion());
+
+    }
+
+    private Drawable seleccionarFotoArtista(Artista artista){
+        if(artista.getNombre().equals("Adele")){
+
+        }
+        return null;
+    }
+
 
 }
