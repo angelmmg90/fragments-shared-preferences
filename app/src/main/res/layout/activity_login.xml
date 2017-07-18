@@ -10,12 +10,6 @@ android:orientation="vertical"
 tools:context="com.fragmentos.seas.fragmentosysharedpreferences.LoginActivity">
 
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="224dp"
-    app:srcCompat="@drawable/abstract_1"
-    android:id="@+id/imageView2" android:scaleType="centerCrop"/>
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -23,6 +17,13 @@ tools:context="com.fragmentos.seas.fragmentosysharedpreferences.LoginActivity">
         android:gravity="right"
         android:text="TextView"
         tools:text="User" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="224dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/abstract_1" />
 
     <EditText
         android:id="@+id/edtUser"

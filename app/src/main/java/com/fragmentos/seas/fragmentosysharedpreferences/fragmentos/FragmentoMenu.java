@@ -85,6 +85,7 @@ public class FragmentoMenu extends Fragment {
         listaMusic.add(new Artista("Abstract 2", "Carátula Album Abstracto 2"));
         listaMusic.add(new Artista("Abstract 3", "Carátula Album Abstracto 3"));
         listaMusic.add(new Artista("Abstract 4", "Carátula Album Abstracto 4"));
+
         imgAbstract1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,19 +95,19 @@ public class FragmentoMenu extends Fragment {
         imgAbstract2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                listener.onArtistaSelected(listaMusic.get(1));
             }
         });
         imgAbstract3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                listener.onArtistaSelected(listaMusic.get(2));
             }
         });
         imgAbstract4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                listener.onArtistaSelected(listaMusic.get(3));
             }
         });
 
