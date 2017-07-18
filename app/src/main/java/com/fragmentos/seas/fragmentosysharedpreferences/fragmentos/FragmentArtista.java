@@ -4,33 +4,33 @@ package com.fragmentos.seas.fragmentosysharedpreferences.fragmentos;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fragmentos.seas.fragmentosysharedpreferences.R;
 import com.fragmentos.seas.fragmentosysharedpreferences.beans.Artista;
 
-public class FragmentsArtista extends Fragment {
+public class FragmentArtista extends Fragment {
 
 
-    public FragmentsArtista() {
+    public FragmentArtista() {
         // Required empty public constructor
     }
 
 
     /*Bloque de instancia*/
     //Cualquier que requiera de un fragmento en vez de hacer un new llamará a este método estático que devolverá un fragmento
-    public static FragmentsArtista newInstance(Bundle datos){//Bundle para poder transferir datos entre diferentes activities, parecido a HashMaps
-        FragmentsArtista fragmentsArtista = new FragmentsArtista();
+    public static FragmentArtista newInstance(Bundle datos){//Bundle para poder transferir datos entre diferentes activities, parecido a HashMaps
+        FragmentArtista fragmentArtista = new FragmentArtista();
 
         if(datos!=null){
-            fragmentsArtista.setArguments(datos);
+            fragmentArtista.setArguments(datos);
         }
-        return fragmentsArtista;
+        return fragmentArtista;
 
     }
     /**/
@@ -56,14 +56,24 @@ public class FragmentsArtista extends Fragment {
     public void modificarDatosArtista(Artista artista){
         nombreArtista.setText(artista.getNombre());
         descArtista.setText(artista.getDescripcion());
+        imagen.setImageDrawable(seleccionarFotoArtista(artista));
 
     }
 
     private Drawable seleccionarFotoArtista(Artista artista){
-        if(artista.getNombre().equals("Adele")){
-
+        Drawable foto = null;
+        if(artista.getNombre().equals("Abstract1")){
+            //Actualización de la SDK por eso se pone la segunda linea
+            //foto = getResources().getDrawable(R.drawable.abstract_1);
+            foto = ResourcesCompat.getDrawable(getResources(), R.drawable.abstract_1, null);
+        }else if (artista.getNombre().equals("Abstract2")){
+            foto = ResourcesCompat.getDrawable(getResources(), R.drawable.abstract_3, null);
+        }else if (artista.getNombre().equals("Abstract3")){
+            foto = ResourcesCompat.getDrawable(getResources(), R.drawable.abstract_3, null);
+        }else{
+            foto = ResourcesCompat.getDrawable(getResources(), R.drawable.abstract_4, null);
         }
-        return null;
+        return foto;
     }
 
 

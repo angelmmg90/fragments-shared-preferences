@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
 
-    tools:context="com.fragmentos.seas.fragmentosysharedpreferences.fragmentos.FragmentsArtista"
+    tools:context="com.fragmentos.seas.fragmentosysharedpreferences.fragmentos.FragmentArtista"
     android:weightSum="100">
 
 
