@@ -26,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         edtPass = (EditText) findViewById(R.id.edtPass);
 
         btnEnviar = (Button) findViewById(R.id.btnEnviar);
+
+        checkUsuarioYPass();
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,8 +48,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void nextScreen(){
-        /*Intent navegarEntrePantallas = new Intent(getBaseContext(), "??");
-          startActivity(navegarEntrePantallas);*/
+        Intent navegarEntrePantallas = new Intent(getBaseContext(), DisplayMusic.class);
+        startActivity(navegarEntrePantallas);
     }
 
     private void checkUsuarioYPass(){
