@@ -1,5 +1,7 @@
 package com.fragmentos.seas.fragmentosysharedpreferences;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -20,7 +22,19 @@ public class DisplayMusic extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_music);
 
+        fragmentoMenu = FragmentoMenu.newInstance(null);
+        fragmentArtista = FragmentArtista.newInstance(null);
+
         /*PREPARAR LOS FRAGMENTOS*/
+        /*1º Gestor de fragmentos*/
+            FragmentManager gestor  = getSupportFragmentManager();
+        /*2º Comenzar transacción*/
+            FragmentTransaction transaccion = gestor.beginTransaction();
+        /*3º Pegar FRAGMENTOS*/
+            transaccion.add(R.id.fragmentoMenuImagenes, fragmentoMenu);
+            transaccion.add(R.id.fragmentoImagenYBiografia, fragmentArtista);
+
+        transaccion.commit();
         /**/
 
 
@@ -29,7 +43,8 @@ public class DisplayMusic extends AppCompatActivity
     @Override
     public void onArtistaSelected(Artista artista) {
         /*Modificaré el 2º fragmento*/
-        // modificarDatosArtista
+
+        fragmentArtista.modificarDatosArtista(artista);
 
         /*Fin*/
     }
